@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
 import PropTypes from 'prop-types';
+import styles from './App.module.css';
 
 export default class App extends Component {
   static propTypes = {
@@ -20,14 +21,15 @@ export default class App extends Component {
   };
 
   render() {
+    const { shell } = styles;
     return (
-      <>
+      <section className={shell}>
         <Counter
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
         ></Counter>
-      </>
+      </section>
     );
   }
 }
